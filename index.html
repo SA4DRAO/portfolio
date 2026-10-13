@@ -6,13 +6,13 @@
     <title>Adarsh Rao</title>
     <meta
       name="description"
-      content="Adarsh Rao, software engineer at Mastercard. I work on React, Java/Spring Boot and LLM tooling."
+      content="Adarsh Rao, software engineer at Mastercard looking for forward deployed engineer roles. React, Java, LLM agents."
     />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Adarsh Rao, Software Engineer" />
     <meta
       property="og:description"
-      content="I work on React, Java/Spring Boot and LLM tooling."
+      content="Software engineer at Mastercard looking for forward deployed engineer roles."
     />
     <meta name="twitter:card" content="summary" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
@@ -43,10 +43,11 @@
           <p class="kicker">hi, I'm</p>
           <h1>Adarsh Rao</h1>
           <p class="lede">
-            Software engineer at Mastercard.<br />
-            I build for 20,000 users at work<br />
-            and LLM tooling on the side.
+            Software engineer.<br />
+            Shipping to 20,000 users at Mastercard,<br />
+            looking for forward deployed roles
           </p>
+          <p class="where">Bengaluru · open to relocating to the US or Canada</p>
         </section>
 
         <section class="block">
@@ -58,16 +59,15 @@
               <span class="entry-meta">Mastercard · Mar 2026 – present</span>
             </div>
             <p class="entry-note">
-              Operational Reports 2.0 is a web app where issuers, acquirers and affiliates find, subscribe to and download 400+ payment reports. It has 20,000 users worldwide.
+              Operational Reports 2.0: issuers, acquirers and affiliates use it to find, subscribe to and download 400+ payment reports. 20,000 users worldwide.
             </p>
             <ul class="highlights">
-              <li>Led the frontend for the whole app: Report Finder, chatbot, recommendations, training page, subscription flows and export dialogs. Also handle production incidents, using Splunk to trace them.</li>
-              <li>Led the rewrite from Angular to React. Largest Contentful Paint dropped from about 6s to 1.5s.</li>
-              <li>Cut the main JS bundle by 24% and the hero image by 93% with route-level code splitting, lazy loading and WebP.</li>
-              <li>Fixed a production <span class="nowrap">OutOfMemoryError</span> in a batch job by streaming BLOB writes instead of saving a byte[] through Hibernate. In a heap benchmark the new code still works at 36 MB, where the old code failed at 96 MB or less.</li>
-              <li>Moved four backend services to structured JSON logging. Benchmarked async logging (69% lower p99, 81% lower p99.9 latency) and wrote the rollout plan, including a recommendation against it for one service where it wouldn't help.</li>
-              <li>Built onboarding tours driven by config and user role, RBAC with SSO, and a shared component library used across the program.</li>
-              <li>Prototyped natural-language report search on Chrome's built-in Prompt API, and demoed AI bots internally that got the team using AI tools in its workflow.</li>
+              <li>Own the frontend for the whole app (report search, chatbot, recommendations, subscriptions, exports), working with product and business owners as requirements kept changing.</li>
+              <li>Part of the modernization initiative that moves the platform's services to a microservices architecture on AWS under PCI-DSS, where nothing can be stored unencrypted at rest.</li>
+              <li>Led the move from Angular to React and cut Largest Contentful Paint from about 6s to 1.5s.</li>
+              <li>Take part in production incidents, tracing them through Splunk logs. Found and fixed an out-of-memory crash in a batch job by streaming large writes to the database; it now works at 36 MB of heap where the old code failed at 96 MB.</li>
+              <li>Benchmarked async logging (p99 latency down 69%) and wrote the rollout plan, including a recommendation against it for a service where it wouldn't help.</li>
+              <li>Prototyped natural-language report search on Chrome's built-in on-device model, and demoed AI bots internally that got the team using AI tools in its daily work.</li>
             </ul>
           </article>
 
@@ -77,19 +77,19 @@
               <span class="entry-meta">Mastercard · Jun 2024 – Mar 2026</span>
             </div>
             <ul class="highlights">
-              <li>Built a full-stack admin tool (Spring Boot + Angular micro-frontend) from schema to UI: 4-role RBAC, multi-stage approval with rollback and audit trail. It removed weeks of engineering per quarter from metadata updates.</li>
-              <li>Captured 75K–150K daily interaction events that shaped feature prioritization and deprecation decisions.</li>
-              <li>Led WCAG accessibility modernization of the legacy application.</li>
-              <li>Prototyped a text-to-SQL + RAG chatbot (self-hosted LLM + pgvector) for an internal hackathon and demoed it to engineering directors.</li>
+              <li>Built an admin tool from schema to UI (Spring Boot, Angular) with 4 roles and a multi-stage approval flow. It let the team update report metadata without waiting for a quarterly release, saving weeks of engineering each quarter.</li>
+              <li>Tracked 75K to 150K user events a day, which the team used to decide what to build and what to retire.</li>
+              <li>Brought the legacy app up to WCAG accessibility standards.</li>
+              <li>Prototyped a text-to-SQL chatbot on a self-hosted LLM for an internal hackathon and demoed it to engineering directors.</li>
             </ul>
           </article>
 
-          <article class="entry">
+          <article class="entry entry--compact">
             <div class="entry-top">
               <h3>Software Development Engineer Intern</h3>
               <span class="entry-meta">Mastercard · May – Jul 2023</span>
             </div>
-            <p>Built an automated backup system in Java/Spring Boot for large-scale migrations. Placed 3rd among all Pan-India Mastercard interns in the Innovation Challenge for a real-time payment fraud detection solution.</p>
+            <p>Built a backup system for large data migrations. Placed 3rd among all Mastercard interns in India in the Innovation Challenge, for a real-time fraud detection idea.</p>
           </article>
         </section>
 
@@ -98,11 +98,32 @@
 
           <article class="entry entry--compact">
             <div class="entry-top">
+              <h3>Voter Buddy</h3>
+              <span class="entry-meta">Lok Sabha 2024</span>
+            </div>
+            <p>
+              A WhatsApp chatbot for the 2024 election, built with the District Collector's office in Hanumakonda. 500+ people used it, and it was covered by The Hindu. I worked with election officials on what voters needed, then built and ran it on Oracle Cloud.
+            </p>
+          </article>
+
+          <article class="entry entry--compact">
+            <div class="entry-top">
+              <h3>Amma</h3>
+              <span class="entry-meta">Flutter · Firebase</span>
+            </div>
+            <p>
+              A language-learning app for children with hearing difficulties. Designed with two speech therapists and tested with 10 children. It uses image recognition on flashcards and gives speech feedback in 10+ Indian languages. Covered by The Hindu.
+              <a href="https://github.com/SA4DRAO/amma" target="_blank" rel="noopener">github</a>
+            </p>
+          </article>
+
+          <article class="entry entry--compact">
+            <div class="entry-top">
               <h3>Remi</h3>
               <span class="entry-meta">open source · 2026</span>
             </div>
             <p>
-              LLM observability for self-hosted agent platforms, built on OpenTelemetry with no SDK: agent code imports nothing and instrumentation is set through env vars. Java 21 and Spring Boot on ClickHouse, with per-org API keys, a hash-chained audit log, and a React dashboard that has flame charts, session replay, release comparison and LLM-as-judge.
+              LLM observability that a team can run on its own infrastructure. Agents send traces to it by setting environment variables, with no code changes. Per-organization access keys, SSO, a tamper-evident audit log, and backups that are verified by restoring them. Java 21, Spring Boot, ClickHouse, React.
               <a href="https://github.com/SA4DRAO/remi-observability" target="_blank" rel="noopener">github</a>
             </p>
           </article>
@@ -113,7 +134,7 @@
               <span class="entry-meta">Neo4j hackathon · 2026</span>
             </div>
             <p>
-              A support agent that remembers returning customers, so they don't have to repeat the product and the issue. It is a 12-node LangGraph state machine on Neo4j with four kinds of memory (short-term, long-term, reasoning, and semantic through vector indexes). A policy controller picks the ticket action, and every turn leaves a decision trace. The demo data is 8,469 tickets, 8,320 customers and 42 products.
+              A support agent that remembers returning customers, so they don't repeat the product and the issue. A LangGraph agent on Neo4j with short-term, long-term, reasoning and semantic memory, and a decision trace for every turn. Tested on 8,469 support tickets.
               <a href="https://github.com/SA4DRAO/neo4j-hackathon" target="_blank" rel="noopener">github</a>
             </p>
           </article>
@@ -123,24 +144,25 @@
               <h3>umarag</h3>
               <span class="entry-meta">in development · 2026</span>
             </div>
-            <p>RAG chatbot SDK that runs entirely in the browser. Retrieval and generation happen on the user's device, with no backend calls at query time. It uses WebLLM (WebGPU) or the browser Prompt API and picks one automatically.</p>
+            <p>
+              A RAG chatbot SDK that runs entirely in the browser, with no backend calls at query time.
+              <a href="https://github.com/SA4DRAO/umarag" target="_blank" rel="noopener">github</a>
+            </p>
           </article>
+        </section>
 
-          <article class="entry entry--compact">
-            <div class="entry-top">
-              <h3>Voter Buddy</h3>
-              <span class="entry-meta">Lok Sabha 2024</span>
-            </div>
-            <p>WhatsApp chatbot for voter awareness, built with the District Collector's office in Hanumakonda. Covered by The Hindu.</p>
-          </article>
-
-          <article class="entry entry--compact">
-            <div class="entry-top">
-              <h3>Amma</h3>
-              <span class="entry-meta">Flutter · Firebase</span>
-            </div>
-            <p>Language-learning app for children with hearing difficulties, built with two speech therapists and tested with 10 children. 10+ Indian languages. Covered by The Hindu.</p>
-          </article>
+        <section class="block">
+          <h2><span class="block-name">skills</span></h2>
+          <dl class="skills">
+            <dt>languages</dt>
+            <dd>Java, TypeScript, JavaScript, Python, SQL</dd>
+            <dt>llm</dt>
+            <dd>LangGraph, LangChain, RAG, vector search, prompt engineering, OpenTelemetry</dd>
+            <dt>build</dt>
+            <dd>React, Spring Boot, Node.js, FastAPI, Flutter</dd>
+            <dt>data and infra</dt>
+            <dd>Oracle, PostgreSQL, ClickHouse, Neo4j, Docker, Jenkins, Splunk</dd>
+          </dl>
         </section>
 
         <section class="block">
@@ -149,14 +171,14 @@
           <article class="entry entry--compact">
             <div class="entry-top">
               <h3>Technical Team Lead</h3>
-              <span class="entry-meta">Centre for Innovation and Incubation, NIT Warangal</span>
+              <span class="entry-meta">Innovation cell, NIT Warangal</span>
             </div>
-            <p>Ran workshops and hackathons for 1800+ students and mentored startups building their first MVPs.</p>
+            <p>Ran workshops and hackathons for 1800+ students and helped startups build their first MVPs.</p>
           </article>
 
           <article class="entry entry--compact">
             <div class="entry-top">
-              <h3>B.Tech, Computer Science</h3>
+              <h3>B.Tech, Computer Science and Engineering</h3>
               <span class="entry-meta">NIT Warangal · 2020 – 2024</span>
             </div>
           </article>
@@ -164,7 +186,7 @@
 
         <section class="block closer">
           <p class="closer-text">
-            I'm looking for forward deployed engineer roles, working directly with customers and owning their problem until it runs in production. Email me at adrao18020@gmail.com.
+            I'm looking for forward deployed engineer roles, where I work directly with customers and own their problem until it runs in production. Email me at <a href="mailto:adrao18020@gmail.com">adrao18020@gmail.com</a>.
           </p>
         </section>
       </main>

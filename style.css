@@ -326,6 +326,38 @@ h1 {
 }
 
 /* ---------- closer ---------- */
+.where {
+  margin-top: 1.1rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 0.55rem 1rem;
+  font-size: 0.84rem;
+  line-height: 1.65;
+}
+
+.skills dt {
+  color: var(--muted);
+}
+
+.skills dd {
+  color: var(--ink-soft);
+}
+
+@media (max-width: 520px) {
+  .skills {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
+  .skills dd {
+    margin-bottom: 0.6rem;
+  }
+}
+
 .closer-text {
   max-width: 40rem;
   margin-bottom: 1.1rem;
