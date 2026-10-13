@@ -6,13 +6,13 @@
     <title>Adarsh Rao</title>
     <meta
       name="description"
-      content="Adarsh Rao — software engineer at Mastercard. Ships production systems end to end: React, Java/Spring Boot, and LLM tooling."
+      content="Adarsh Rao, software engineer at Mastercard. I work on React, Java/Spring Boot and LLM tooling."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Adarsh Rao — Software Engineer" />
+    <meta property="og:title" content="Adarsh Rao, Software Engineer" />
     <meta
       property="og:description"
-      content="Ships production systems end to end: React, Java/Spring Boot, and LLM tooling."
+      content="I work on React, Java/Spring Boot and LLM tooling."
     />
     <meta name="twitter:card" content="summary" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
@@ -43,9 +43,9 @@
           <p class="kicker">hi, I'm</p>
           <h1>Adarsh Rao</h1>
           <p class="lede">
-            Software engineer at Mastercard,<br />
-            shipping to 20,000 users,<br />
-            and building LLM tooling on the side
+            Software engineer at Mastercard.<br />
+            I build for 20,000 users at work<br />
+            and LLM tooling on the side.
           </p>
         </section>
 
@@ -58,16 +58,16 @@
               <span class="entry-meta">Mastercard · Mar 2026 – present</span>
             </div>
             <p class="entry-note">
-              Operational Reports 2.0 — a web app where payment-lifecycle customers (issuers, acquirers, affiliates) find, subscribe to and download 400+ reports. 20,000 users globally.
+              Operational Reports 2.0 is a web app where issuers, acquirers and affiliates find, subscribe to and download 400+ payment reports. It has 20,000 users worldwide.
             </p>
             <ul class="highlights">
-              <li>Led the frontend for the whole application: Report Finder, chatbot, recommendations, training, subscription flows and export dialogs — and kept it running through production incidents, using Splunk for triage.</li>
-              <li>Led the Angular → React rewrite; Largest Contentful Paint went from ~6s to ~1.5s.</li>
-              <li>Cut the paint-blocking JS bundle by 24% and the hero image by 93% with route-level code-splitting, lazy-loading and WebP.</li>
-              <li>Eliminated a production <span class="nowrap">OutOfMemoryError</span> in a batch job by streaming BLOB writes instead of Hibernate's byte[] save; a heap benchmark showed it survives at 36 MB where the old code failed at ≤96 MB.</li>
-              <li>Standardized structured JSON logging across four backend services; benchmarked async logging at 69–81% lower tail latency and wrote the rollout plan — including a recommendation <em>not</em> to adopt it where it wouldn't help.</li>
-              <li>Built role-aware, config-driven onboarding tours, RBAC with SSO, and a shared component library used program-wide.</li>
-              <li>Prototyped on-device natural-language report search on Chrome's built-in Prompt API, and demoed AI bots that moved the team toward AI tooling in its workflow.</li>
+              <li>Led the frontend for the whole app: Report Finder, chatbot, recommendations, training page, subscription flows and export dialogs. Also handle production incidents, using Splunk to trace them.</li>
+              <li>Led the rewrite from Angular to React. Largest Contentful Paint dropped from about 6s to 1.5s.</li>
+              <li>Cut the main JS bundle by 24% and the hero image by 93% with route-level code splitting, lazy loading and WebP.</li>
+              <li>Fixed a production <span class="nowrap">OutOfMemoryError</span> in a batch job by streaming BLOB writes instead of saving a byte[] through Hibernate. In a heap benchmark the new code still works at 36 MB, where the old code failed at 96 MB or less.</li>
+              <li>Moved four backend services to structured JSON logging. Benchmarked async logging (69% lower p99, 81% lower p99.9 latency) and wrote the rollout plan, including a recommendation against it for one service where it wouldn't help.</li>
+              <li>Built onboarding tours driven by config and user role, RBAC with SSO, and a shared component library used across the program.</li>
+              <li>Prototyped natural-language report search on Chrome's built-in Prompt API, and demoed AI bots internally that got the team using AI tools in its workflow.</li>
             </ul>
           </article>
 
@@ -102,7 +102,7 @@
               <span class="entry-meta">open source · 2026</span>
             </div>
             <p>
-              OpenTelemetry-native, zero-SDK LLM observability for self-hosted agent platforms — agent code imports nothing, instrumentation is env vars. Java 21 / Spring Boot on ClickHouse, with multi-tenant API-key auth, a hash-chained audit log, and a React dashboard (flame-charts, session replay, per-release comparison, LLM-as-judge).
+              LLM observability for self-hosted agent platforms, built on OpenTelemetry with no SDK: agent code imports nothing and instrumentation is set through env vars. Java 21 and Spring Boot on ClickHouse, with per-org API keys, a hash-chained audit log, and a React dashboard that has flame charts, session replay, release comparison and LLM-as-judge.
               <a href="https://github.com/SA4DRAO/remi-observability" target="_blank" rel="noopener">github</a>
             </p>
           </article>
@@ -113,7 +113,7 @@
               <span class="entry-meta">Neo4j hackathon · 2026</span>
             </div>
             <p>
-              Customer-support agent that remembers returning customers, so they never repeat the product and issue. A 12-node LangGraph state machine over Neo4j with four memory layers (short-term, long-term, reasoning, semantic via vector indexes), a bounded policy controller that decides ticket actions, and a full decision trace for every turn. Loads 8,469 tickets, 8,320 customers and 42 products.
+              A support agent that remembers returning customers, so they don't have to repeat the product and the issue. It is a 12-node LangGraph state machine on Neo4j with four kinds of memory (short-term, long-term, reasoning, and semantic through vector indexes). A policy controller picks the ticket action, and every turn leaves a decision trace. The demo data is 8,469 tickets, 8,320 customers and 42 products.
               <a href="https://github.com/SA4DRAO/neo4j-hackathon" target="_blank" rel="noopener">github</a>
             </p>
           </article>
@@ -123,7 +123,7 @@
               <h3>umarag</h3>
               <span class="entry-meta">in development · 2026</span>
             </div>
-            <p>Client-side RAG chatbot SDK: retrieval and generation both run in the user's browser, with zero backend calls at query time. WebLLM (WebGPU) or the browser Prompt API, picked automatically.</p>
+            <p>RAG chatbot SDK that runs entirely in the browser. Retrieval and generation happen on the user's device, with no backend calls at query time. It uses WebLLM (WebGPU) or the browser Prompt API and picks one automatically.</p>
           </article>
 
           <article class="entry entry--compact">
@@ -164,7 +164,7 @@
 
         <section class="block closer">
           <p class="closer-text">
-            Looking for forward-deployed engineering roles — embedded with customers, owning the problem from first call to production. Say hello.
+            I'm looking for forward deployed engineer roles, working directly with customers and owning their problem until it runs in production. Email me at adrao18020@gmail.com.
           </p>
         </section>
       </main>
