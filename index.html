@@ -3,31 +3,164 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adarsh Rao</title>
     <meta
       name="description"
-      content="Adarsh Rao — AI / LLM Engineer. I build self-hosted, production-grade systems for large language models: observability, agent memory, and the infrastructure that makes agents reliable in production."
+      content="Adarsh Rao — software engineer at Mastercard. Ships production systems end to end: React, Java/Spring Boot, and LLM tooling."
     />
-    <title>Adarsh Rao — AI / LLM Engineer</title>
-    <script>
-      (function () {
-        try {
-          var t = localStorage.getItem('theme');
-          if (t !== 'light' && t !== 'dark') {
-            t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-          }
-          document.documentElement.setAttribute('data-theme', t);
-        } catch (e) {}
-      })();
-    </script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Adarsh Rao — Software Engineer" />
+    <meta
+      property="og:description"
+      content="Ships production systems end to end: React, Java/Spring Boot, and LLM tooling."
+    />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div class="page">
+      <header class="top">
+        <a class="email" href="mailto:adrao18020@gmail.com">adrao18020@gmail.com</a>
+        <nav class="links" aria-label="elsewhere">
+          <a href="https://linkedin.com/in/sa4drao" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/SA4DRAO" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="intro">
+          <p class="kicker">hi, I'm</p>
+          <h1>Adarsh Rao</h1>
+          <p class="lede">
+            Software engineer at Mastercard,<br />
+            shipping to 20,000 users,<br />
+            and building LLM tooling on the side
+          </p>
+        </section>
+
+        <section class="block">
+          <h2><span class="block-name">work</span></h2>
+
+          <article class="entry">
+            <div class="entry-top">
+              <h3>Software Development Engineer 2</h3>
+              <span class="entry-meta">Mastercard · Mar 2026 – present</span>
+            </div>
+            <p class="entry-note">
+              Operational Reports 2.0 — a web app where payment-lifecycle customers (issuers, acquirers, affiliates) find, subscribe to and download 400+ reports. 20,000 users globally.
+            </p>
+            <ul class="highlights">
+              <li>Led the frontend for the whole application: Report Finder, chatbot, recommendations, training, subscription flows and export dialogs — and kept it running through production incidents, using Splunk for triage.</li>
+              <li>Led the Angular → React rewrite; Largest Contentful Paint went from ~6s to ~1.5s.</li>
+              <li>Cut the paint-blocking JS bundle by 24% and the hero image by 93% with route-level code-splitting, lazy-loading and WebP.</li>
+              <li>Eliminated a production <span class="nowrap">OutOfMemoryError</span> in a batch job by streaming BLOB writes instead of Hibernate's byte[] save; a heap benchmark showed it survives at 36 MB where the old code failed at ≤96 MB.</li>
+              <li>Standardized structured JSON logging across four backend services; benchmarked async logging at 69–81% lower tail latency and wrote the rollout plan — including a recommendation <em>not</em> to adopt it where it wouldn't help.</li>
+              <li>Built role-aware, config-driven onboarding tours, RBAC with SSO, and a shared component library used program-wide.</li>
+              <li>Prototyped on-device natural-language report search on Chrome's built-in Prompt API, and demoed AI bots that moved the team toward AI tooling in its workflow.</li>
+            </ul>
+          </article>
+
+          <article class="entry">
+            <div class="entry-top">
+              <h3>Software Development Engineer 1</h3>
+              <span class="entry-meta">Mastercard · Jun 2024 – Mar 2026</span>
+            </div>
+            <ul class="highlights">
+              <li>Built a full-stack admin tool (Spring Boot + Angular micro-frontend) from schema to UI: 4-role RBAC, multi-stage approval with rollback and audit trail. It removed weeks of engineering per quarter from metadata updates.</li>
+              <li>Captured 75K–150K daily interaction events that shaped feature prioritization and deprecation decisions.</li>
+              <li>Led WCAG accessibility modernization of the legacy application.</li>
+              <li>Prototyped a text-to-SQL + RAG chatbot (self-hosted LLM + pgvector) for an internal hackathon and demoed it to engineering directors.</li>
+            </ul>
+          </article>
+
+          <article class="entry">
+            <div class="entry-top">
+              <h3>Software Development Engineer Intern</h3>
+              <span class="entry-meta">Mastercard · May – Jul 2023</span>
+            </div>
+            <p>Built an automated backup system in Java/Spring Boot for large-scale migrations. Placed 3rd among all Pan-India Mastercard interns in the Innovation Challenge for a real-time payment fraud detection solution.</p>
+          </article>
+        </section>
+
+        <section class="block">
+          <h2><span class="block-name">projects</span></h2>
+
+          <article class="entry entry--compact">
+            <div class="entry-top">
+              <h3>Remi</h3>
+              <span class="entry-meta">open source · 2026</span>
+            </div>
+            <p>
+              OpenTelemetry-native, zero-SDK LLM observability for self-hosted agent platforms — agent code imports nothing, instrumentation is env vars. Java 21 / Spring Boot on ClickHouse, with multi-tenant API-key auth, a hash-chained audit log, and a React dashboard (flame-charts, session replay, per-release comparison, LLM-as-judge).
+              <a href="https://github.com/SA4DRAO/remi-observability" target="_blank" rel="noopener">github</a>
+            </p>
+          </article>
+
+          <article class="entry entry--compact">
+            <div class="entry-top">
+              <h3>umarag</h3>
+              <span class="entry-meta">in development · 2026</span>
+            </div>
+            <p>Client-side RAG chatbot SDK: retrieval and generation both run in the user's browser, with zero backend calls at query time. WebLLM (WebGPU) or the browser Prompt API, picked automatically.</p>
+          </article>
+
+          <article class="entry entry--compact">
+            <div class="entry-top">
+              <h3>Voter Buddy</h3>
+              <span class="entry-meta">Lok Sabha 2024</span>
+            </div>
+            <p>WhatsApp chatbot for voter awareness, built with the District Collector's office in Hanumakonda. Covered by The Hindu.</p>
+          </article>
+
+          <article class="entry entry--compact">
+            <div class="entry-top">
+              <h3>Amma</h3>
+              <span class="entry-meta">Flutter · Firebase</span>
+            </div>
+            <p>Language-learning app for children with hearing difficulties, built with two speech therapists and tested with 10 children. 10+ Indian languages. Covered by The Hindu.</p>
+          </article>
+        </section>
+
+        <section class="block">
+          <h2><span class="block-name">elsewhere</span></h2>
+
+          <article class="entry entry--compact">
+            <div class="entry-top">
+              <h3>Technical Team Lead</h3>
+              <span class="entry-meta">Centre for Innovation and Incubation, NIT Warangal</span>
+            </div>
+            <p>Ran workshops and hackathons for 1800+ students and mentored startups building their first MVPs.</p>
+          </article>
+
+          <article class="entry entry--compact">
+            <div class="entry-top">
+              <h3>B.Tech, Computer Science</h3>
+              <span class="entry-meta">NIT Warangal · 2020 – 2024</span>
+            </div>
+          </article>
+        </section>
+
+        <section class="block closer">
+          <p class="closer-text">
+            Looking for forward-deployed engineering roles — embedded with customers, owning the problem from first call to production. Say hello.
+          </p>
+        </section>
+      </main>
+
+      <footer>
+        <p>© <span id="year"></span> Adarsh Rao</p>
+      </footer>
+    </div>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
