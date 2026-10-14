@@ -31,6 +31,7 @@
         <nav class="links" aria-label="elsewhere">
           <a href="https://linkedin.com/in/sa4drao" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://github.com/SA4DRAO" target="_blank" rel="noopener">GitHub</a>
+          <a href="./resume.pdf" target="_blank" rel="noopener">Resume</a>
         </nav>
       </header>
 
@@ -48,6 +49,7 @@
             looking for forward deployed roles
           </p>
           <p class="where">Bengaluru · open to relocating to the US or Canada</p>
+          <a class="pill" href="./resume.pdf" target="_blank" rel="noopener">resume</a>
         </section>
 
         <section class="block">
@@ -63,12 +65,12 @@
             </p>
             <ul class="highlights">
               <li>Own the frontend for the whole app (report search, chatbot, recommendations, subscriptions, exports), working with product and business owners as requirements kept changing. I also handle production incidents, tracing them through Splunk logs.</li>
-              <li>Part of the modernization initiative that moves the platform's services to a microservices architecture on AWS under PCI-DSS, where nothing can be stored unencrypted at rest.</li>
-              <li>Led the move from Angular to React and cut Largest Contentful Paint from about 6s to 1.5s.</li>
-              <li>Split the Billing Query Tool out of the monolith into its own micro-frontend, wrote its Jenkins CI/CD pipelines and owned the release to production. 500+ users.</li>
-              <li>Benchmarked async logging (p99 latency down 69%) and wrote the rollout plan, including a recommendation against it for a service where it wouldn't help.</li>
               <li>Built the frontend and the report-matching logic for the app's production RAG chatbot. Answers that mention a report show a different card depending on whether the user is subscribed to it. I also took part in the UI/UX discussions on the generative UI.</li>
-              <li>Prototyped natural-language report search on Chrome's built-in on-device model, and demoed AI bots internally that got the team using AI tools in its daily work.</li>
+              <li>Prototyped an on-device search agent on Chrome's built-in LLM, with no server round trip. Chrome has no native function calling, so a JSON-Schema-constrained intent extractor turns natural language into a typed query, calls the real backend API and feeds the results back for a summary. It also exposes a WebMCP tool schema.</li>
+              <li>Built and demoed internal LLM agents (a defect-solver bot, a feature-implementation bot and automated testing agents) that got the team using AI tools in its development workflow.</li>
+              <li>Part of the modernization initiative that moves the platform's services to microservices on AWS under PCI-DSS, where nothing can be stored unencrypted at rest, while keeping live services running.</li>
+              <li>Led the rewrite from Angular to React, cutting load time by 75% (Largest Contentful Paint from 6s to 1.5s). Split the Billing Query Tool out of the monolith into its own micro-frontend with its own Jenkins CI/CD pipelines, and owned its release to production. 500+ users.</li>
+              <li>Measured a 69% to 81% drop in logging tail latency (p99 and p99.9 at 8 threads) with a JMH benchmark, then wrote a hybrid design backed by a crash-loss simulation and a phased canary rollout. It was adopted into follow-up work.</li>
             </ul>
           </article>
 
@@ -78,10 +80,10 @@
               <span class="entry-meta">Mastercard · Jun 2024 – Mar 2026</span>
             </div>
             <ul class="highlights">
-              <li>Built an admin tool from schema to UI (Spring Boot, Angular) with 4 roles and a multi-stage approval flow. It let the team update report metadata without waiting for a quarterly release, saving weeks of engineering each quarter.</li>
+              <li>Designed and shipped a full-stack admin tool in Java, Spring Boot, Angular and Oracle SQL: schema, REST APIs, 4 roles and a multi-stage approval flow with rollback and an audit trail. It replaced a quarterly release cycle for metadata updates with on-demand self-service.</li>
               <li>Tracked 75K to 150K user events a day, which the team used to decide what to build and what to retire.</li>
               <li>Brought the legacy app up to WCAG accessibility standards.</li>
-              <li>Prototyped a text-to-SQL chatbot on a self-hosted LLM for an internal hackathon and demoed it to engineering directors.</li>
+              <li>Built a text-to-SQL and RAG prototype over a catalog of 400+ reports, on a self-hosted LLM with pgvector search. I engineered the retrieval and prompting from natural language to SQL to a summarized answer, and demoed it to engineering directors.</li>
             </ul>
           </article>
 
@@ -133,7 +135,7 @@
               <span class="entry-meta">open source · 2026</span>
             </div>
             <p>
-              LLM observability that a team can run on its own infrastructure. Agents send traces to it by setting environment variables, with no code changes. Per-organization access keys, SSO, a tamper-evident audit log, and backups that are verified by restoring them. Java 21, Spring Boot, ClickHouse, React.
+              Open-source LLM observability in the same space as LangSmith and Langfuse, built solo. It takes OpenTelemetry traces from LangChain and LangGraph agents through an authenticated multi-tenant proxy into ClickHouse, with no SDK to install. It has flame-chart timelines, per-release comparison and an LLM-as-judge pipeline. It runs on a team's own infrastructure, with SSO, a tamper-evident audit log and restore-verified backups. I cut an aggregate query from 234ms to 26ms on 560K rows. Java 21, Spring Boot, ClickHouse, React.
               <a href="https://github.com/SA4DRAO/remi-observability" target="_blank" rel="noopener">github</a>
             </p>
           </article>
@@ -144,7 +146,7 @@
               <span class="entry-meta">Neo4j hackathon · 2026</span>
             </div>
             <p>
-              A support agent that remembers returning customers, so they don't repeat the product and the issue. A LangGraph agent on Neo4j with short-term, long-term, reasoning and semantic memory, and a decision trace for every turn. Tested on 8,469 support tickets.
+              A support agent for a Neo4j hackathon that remembers returning customers across sessions, so they don't repeat the product and the issue. A 12-node LangGraph state machine keeps four kinds of memory in Neo4j (short-term, long-term, reasoning traces and vector-indexed semantic memory) over 8,469 tickets and 8,320 customers. A policy controller turns each message into a bounded decision, so the LLM only writes the reply and never changes data. A confidence gate asks one focused question instead of guessing, and an audit trace is saved before reasoning, so every turn can be reviewed.
               <a href="https://github.com/SA4DRAO/neo4j-hackathon" target="_blank" rel="noopener">github</a>
             </p>
           </article>
@@ -155,7 +157,7 @@
               <span class="entry-meta">in development · 2026</span>
             </div>
             <p>
-              A RAG chatbot SDK that runs entirely in the browser, with no backend calls at query time.
+              An open-source SDK where retrieval and generation both run in the user's browser, with no backend calls at query time. It searches a prebuilt knowledge export on the client and picks between WebLLM (WebGPU) and Chrome's on-device Prompt API, with fallback and live engine swapping. It bounds chat memory for small context windows, and fails with a typed error rather than falling back to slow CPU inference. Tested with Vitest.
               <a href="https://github.com/SA4DRAO/umarag" target="_blank" rel="noopener">github</a>
             </p>
           </article>
@@ -171,7 +173,7 @@
             <dt>build</dt>
             <dd>React, Spring Boot, Node.js, FastAPI, Flutter</dd>
             <dt>data and infra</dt>
-            <dd>Oracle, PostgreSQL, ClickHouse, Neo4j, Docker, Jenkins, Splunk</dd>
+            <dd>Oracle, PostgreSQL, ClickHouse, Neo4j, AWS, Docker, Jenkins, Splunk</dd>
           </dl>
         </section>
 
